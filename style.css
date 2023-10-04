@@ -1,0 +1,127 @@
+/* styles.css */
+
+/* Reset some default styles and set font family */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lora', serif;
+    box-sizing: border-box;
+}
+
+/* Container styles */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(145deg, #f0c3a0, #c3e0f0);
+    padding: 10px;
+}
+
+/* To-Do App container styles */
+.to_do_app {
+    width: 100%;
+    max-width: 540px;
+    background: #FFFFFF;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+/* To-Do App header styles */
+.to_do_app h2 {
+    color: blue;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* To-Do App header image styles */
+.to_do_app h2 img {
+    width: 40px;
+    margin-left: 10px;
+}
+
+/* Row styles for input and button */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+/* Input field styles */
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    border-radius: 25px;
+    font-weight: 14px;
+}
+
+/* Add button styles */
+#btn {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 42px;
+}
+
+/* List item styles */
+ul li {
+    list-style: none;
+    font-size: 18px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative; /* We used position absolute in ul li::before, so we have to use relative here */
+}
+
+/* Custom checkbox style using ::before pseudo-element */
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-image: url(unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+/* Styles for checked (completed) tasks */
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+/* Update the checkbox style for checked tasks */
+ul li.checked::before {
+    background-image: url(checked.png);
+}
+
+/* Styling for the newly formed '×' span element added through JavaScript */
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+    border-radius: 50%;
+    text-align: center; /* Center the '×' character horizontally and vertically */
+    line-height: 30px; /* Vertically align the '×' character within the circle */
+    cursor: pointer;
+}
+
+/* Hover effect for the '×' span element */
+ul li span:hover {
+    background: lightgray;
+}
